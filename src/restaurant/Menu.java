@@ -1,39 +1,25 @@
 package restaurant;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Menu {
     // consists of several menu items
     /*  appetizer,main,dessert */
 
     //fields
-    public ArrayList<MenuItem> appetizers = new ArrayList<>();
-    public ArrayList<MenuItem> main = new ArrayList<>();
-    public ArrayList<MenuItem> dessert = new ArrayList<>();
+    private ArrayList<MenuItem> appetizers = new ArrayList<>();
+    private ArrayList<MenuItem> main = new ArrayList<>();
+    private ArrayList<MenuItem> dessert = new ArrayList<>();
+    //last updated
+    private Date lastUpdated;
 
     //contructor
     public Menu() {
         populateMenu();
+        this.lastUpdated = new Date();
+
     }
-    // this gets the items from the dishes
-
-    public MenuItem getAppetizer(int index) {
-        return appetizers.get(index);
-    }
-
-    //public void setAppetizer(ArrayList<MenuItem> appetizer) {this.appetizer = appetizer;}
-
-    public ArrayList<MenuItem> getMain() {
-        return main;
-    }
-
-    //public void setMain(ArrayList<MenuItem> main) {this.main = main;}
-
-    public ArrayList<MenuItem> getDessert() {
-        return dessert;
-    }
-
-//    public void setDessert(ArrayList<MenuItem> dessert) {    this.dessert = dessert; }
 
 
     //return the apptetizers toString()
@@ -70,6 +56,16 @@ public class Menu {
         return aMenu;
     }
 
+    //LAST UPDATED
+
+
+    public Date getLastUpdated() {
+        return lastUpdated;
+    }
+
+    public void setLastUpdated(Date lastUpdated) {
+        this.lastUpdated = lastUpdated;
+    }
 
     //create method to have all appteziers , main dishes and desserts
     public void populateMenu() {
